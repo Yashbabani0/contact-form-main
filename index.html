@@ -14,13 +14,13 @@
 
     <title>Frontend Mentor | Contact form</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js" defer></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
-        font-size: 11px;
+        font-size: 1em;
         text-align: center;
+        margin-bottom: 1em;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -36,7 +36,7 @@
         <div class="name">
           <div class="input_box">
             <div class="fname">
-              <label>First Name <small>*</small></label> <br />
+              <label for="first_name">First Name <small>*</small></label> <br />
               <input
                 type="text"
                 id="first_name"
@@ -45,7 +45,7 @@
               />
             </div>
             <div class="lname">
-              <label>Last Name <small>*</small></label> <br />
+              <label for="Last_name">Last Name <small>*</small></label> <br />
               <input
                 type="text"
                 id="Last_name"
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="mail">
-          <label for="email">Email Address <small>*</small></label> <br />
+          <label for="Email">Email Address <small>*</small></label> <br />
           <input
             type="email"
             name="Email"
@@ -64,51 +64,79 @@
             placeholder="email@example.com"
             required
           />
-          <p class="valid_email">Please enter a valid email address</p>
         </div>
         <div class="query_select">
-          <div class="query_head">Query Type <small>*</small></div>
-          <div class="query_option">
-            <div class="option1">
-              <input
-                type="radio"
-                id="query1"
-                name="queryType"
-                value="General"
-              />
-              <label>General Enquiry</label>
+          <div class="query_head">
+            <label>Query Type</label> <small>*</small>
+          </div>
+          <div class="query_option" style="cursor: pointer">
+            <div class="option1 options" data-for="query1">
+              <div class="query">
+                <input
+                  type="radio"
+                  id="query1"
+                  name="queryType"
+                  value="General"
+                  required
+                />
+              </div>
+
+              <label for="query1">General Enquiry</label>
             </div>
-            <div class="option2">
-              <input
-                type="radio"
-                id="query2"
-                name="queryType"
-                value="Support"
-              />
-              <label>Support Request</label>
+            <div class="option2 options" data-for="query2">
+              <div class="query">
+                <input
+                  type="radio"
+                  id="query2"
+                  name="queryType"
+                  value="Support"
+                  required
+                />
+              </div>
+
+              <label for="query2">Support Request</label>
             </div>
           </div>
         </div>
         <div class="message">
-          <label>Message</label>
-          <input type="text" required />
+          <label for="message">Message <small>*</small></label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            minlength="200"
+            maxlength="1000"
+          ></textarea>
         </div>
         <div class="consent">
-          <input type="checkbox" name="consent" id="" />
-          I consent to being contacted by the team <small>*</small>
+          <label class="custom_checkbox">
+            <input type="checkbox" name="consent" id="consent" required />
+            <span class="checkmark"></span>
+            I consent to being contacted by the team <small>*</small>
+          </label>
         </div>
         <button type="submit">Submit</button>
       </form>
     </main>
 
-    <!-- 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon! -->
+    <div class="successful_alert">
+      <div class="part1">
+        <img
+          src="./assets/images/icon-success-check.svg"
+          alt="successful tick"
+        />
+        <p>Message Sent!</p>
+      </div>
+      <div class="part2">
+        Thanks for completing the form. We'll be in touch soon!
+      </div>
+    </div>
 
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
+      <br />
+      Coded by <a href="https://github.com/Yashbabani0">Yash Babani</a>.
     </div>
   </body>
 </html>
