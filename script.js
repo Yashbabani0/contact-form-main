@@ -18,4 +18,7 @@ form.addEventListener("submit", (e) => {
   main.style.pointerEvents = "none";
   main.style.opacity = 0.2;
   successfulAlert.style.display = "block";
+  setTimeout(() => {
+    location.reload();
+  }, 5000);
 });
