@@ -125,15 +125,24 @@ button:hover {
   border-radius: 0.5em;
   padding: 2em;
   position: absolute;
-  top: 10%;
   color: var(--White);
   font-size: 0.7em;
   display: none;
+  animation: move 3s forwards;
+  animation-timing-function: ease-in-out;
 }
 .part1 {
   display: flex;
   gap: 1em;
   margin-bottom: 1em;
+}
+@keyframes move {
+  from {
+    top: 0;
+  }
+  to {
+    top: 10%;
+  }
 }
 @media (max-width: 40em) {
   main {
